@@ -9,7 +9,7 @@ class Temperature:
         self.temperature_now
         
 
-    def get_Datas(self):
+    def get_datas(self):
         request = requests.get('https://api.hgbrasil.com/weather?woeid=456385');
         new_datas = json.loads(request.content);
         self.temperature_now = new_datas['results']['temp'];
@@ -18,3 +18,6 @@ class Temperature:
     def convert_temperature(self):
         self.fahrenheit = self.temperature_now * (9 / 5) + 32;
         return self.fahrenheit;
+    
+    def Register(self):
+        
